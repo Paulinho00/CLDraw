@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CLDraw
 {
-    public partial class Form1 : Form
+    public partial class DrawWindow : Form
     {
-        public Form1()
+        public DrawWindow()
         {
             InitializeComponent();
         }
