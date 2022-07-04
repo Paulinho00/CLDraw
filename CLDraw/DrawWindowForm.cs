@@ -19,8 +19,6 @@ namespace CLDraw
         {
             InitializeComponent();
             pots = new Pots();
-            pots.Pot1.Add(new Club("dupa", Country.TURKEY));
-            pots.Pot1.Add(new Club("dupa", Country.TURKEY));
         }
 
         private void DrawWindowForm_Load(object sender, EventArgs e)
@@ -29,6 +27,9 @@ namespace CLDraw
             RefreshPotsView();
         }
 
+        /// <summary>
+        /// Refresh content of all pots
+        /// </summary>
         private void RefreshPotsView()
         {
 
@@ -82,7 +83,7 @@ namespace CLDraw
         }
 
         /// <summary>
-        /// Button which clears all pots
+        /// Clears all pots
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -93,6 +94,35 @@ namespace CLDraw
             pots.Pot3.Clear();
             pots.Pot4.Clear();
             RefreshPotsView();
+        }
+
+        /// <summary>
+        /// Deletes selected clubs from pots
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void deleteSelectedButton_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem pot1Item in pot1ListView.SelectedItems)
+            {
+                pot1ListView.Items.Remove(pot1Item);
+            }
+
+            foreach(ListViewItem pot2Item in pot2ListView.SelectedItems)
+            {
+                pot2ListView.Items.Remove(pot2Item);
+            }
+
+            foreach(ListViewItem pot3Item in pot3ListView.SelectedItems)
+            {
+                pot3ListView.Items.Remove(pot3Item);
+            }
+
+            foreach(ListViewItem pot4Item in pot4ListView.SelectedItems)
+            {
+                pot4ListView.Items.Remove(pot4Item);
+            }
+
         }
     }
 }

@@ -48,6 +48,7 @@ namespace CLDraw
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clearPotsButton = new System.Windows.Forms.Button();
+            this.deleteSelectedButton = new System.Windows.Forms.Button();
             this.pot1GroupBox.SuspendLayout();
             this.pot2GroupBox.SuspendLayout();
             this.pot3GroupBox.SuspendLayout();
@@ -184,7 +185,7 @@ namespace CLDraw
             // 
             // clearPotsButton
             // 
-            this.clearPotsButton.Location = new System.Drawing.Point(929, 12);
+            this.clearPotsButton.Location = new System.Drawing.Point(944, 12);
             this.clearPotsButton.Name = "clearPotsButton";
             this.clearPotsButton.Size = new System.Drawing.Size(75, 23);
             this.clearPotsButton.TabIndex = 6;
@@ -192,11 +193,22 @@ namespace CLDraw
             this.clearPotsButton.UseVisualStyleBackColor = true;
             this.clearPotsButton.Click += new System.EventHandler(this.clearPotsButton_Click);
             // 
+            // deleteSelectedButton
+            // 
+            this.deleteSelectedButton.Location = new System.Drawing.Point(848, 12);
+            this.deleteSelectedButton.Name = "deleteSelectedButton";
+            this.deleteSelectedButton.Size = new System.Drawing.Size(90, 23);
+            this.deleteSelectedButton.TabIndex = 7;
+            this.deleteSelectedButton.Text = "Delete selected";
+            this.deleteSelectedButton.UseVisualStyleBackColor = true;
+            this.deleteSelectedButton.Click += new System.EventHandler(this.deleteSelectedButton_Click);
+            // 
             // DrawWindowForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 450);
+            this.Controls.Add(this.deleteSelectedButton);
             this.Controls.Add(this.clearPotsButton);
             this.Controls.Add(this.pot4GroupBox);
             this.Controls.Add(this.pot3GroupBox);
@@ -232,6 +244,7 @@ namespace CLDraw
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.Button clearPotsButton;
+        private System.Windows.Forms.Button deleteSelectedButton;
     }
 }
 
