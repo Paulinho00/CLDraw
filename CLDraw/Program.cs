@@ -16,7 +16,7 @@ namespace CLDraw
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DrawWindow());
+            Application.Run(new DrawWindowForm());
         }
     }
 }

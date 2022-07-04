@@ -1,6 +1,6 @@
 ﻿namespace CLDraw
 {
-    partial class DrawWindow
+    partial class AddClubForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // DrawWindow
+            // AddClubForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "DrawWindow";
-            this.Text = "CLDraw";
+            this.Name = "AddClubForm";
+            this.Text = "Form1";
             this.ResumeLayout(false);
 
         }
@@ -44,4 +44,3 @@
         #endregion
     }
 }
-

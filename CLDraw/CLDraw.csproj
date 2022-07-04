@@ -46,17 +46,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DrawWindow.cs">
+    <Compile Include="DrawWindowForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DrawWindow.Designer.cs">
-      <DependentUpon>DrawWindow.cs</DependentUpon>
+    <Compile Include="DrawWindowForm.Designer.cs">
+      <DependentUpon>DrawWindowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddClubForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddClubForm.Designer.cs">
+      <DependentUpon>AddClubForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Club.cs" />
+    <Compile Include="Models\Pots.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="DrawWindow.resx">
-      <DependentUpon>DrawWindow.cs</DependentUpon>
+    <EmbeddedResource Include="AddClubForm.resx">
+      <DependentUpon>AddClubForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DrawWindowForm.resx">
+      <DependentUpon>DrawWindowForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

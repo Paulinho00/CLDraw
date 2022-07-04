@@ -8,13 +8,13 @@ namespace CLDraw.Models
 {
     public class Club
     {
-        private readonly string name;
-        private readonly Country country;
+        public string Name { get; }
+        public Country Country { get; }
 
         public Club(string name, Country country)
         {
-            this.name = name;
-            this.country = country;
+            this.Name = name;
+            this.Country = country;
         }
     }
 
