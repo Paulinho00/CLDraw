@@ -11,9 +11,12 @@ using System.Windows.Forms;
 
 namespace CLDraw
 {
+    /// <summary>
+    /// Window where draw takes place, with groups, pots
+    /// </summary>
     public partial class DrawWindowForm : Form
     {
-        private Pots pots;
+        private readonly Pots pots;
 
         public DrawWindowForm()
         {
@@ -38,7 +41,7 @@ namespace CLDraw
             foreach (Club club in pots.Pot1) {
 
                 //Creates country name from uppercase string to only first letter uppercase string
-                string countryName = club.Country.ToString()[0] + club.Country.ToString().Substring(1).ToLower();
+                string countryName = club.Country.ToString();
 
                 var listItem = new ListViewItem(new[] { club.Name, countryName });
                 pot1ListView.Items.Add(listItem);
@@ -50,7 +53,7 @@ namespace CLDraw
             {
 
                 //Creates country name from uppercase string to only first letter uppercase string
-                string countryName = club.Country.ToString()[0] + club.Country.ToString().Substring(1).ToLower();
+                string countryName = club.Country.ToString();
 
                 var listItem = new ListViewItem(new[] { club.Name, countryName });
                 pot2ListView.Items.Add(listItem);
@@ -62,7 +65,7 @@ namespace CLDraw
             {
 
                 //Creates country name from uppercase string to only first letter uppercase string
-                string countryName = club.Country.ToString()[0] + club.Country.ToString().Substring(1).ToLower();
+                string countryName = club.Country.ToString();
 
                 var listItem = new ListViewItem(new[] { club.Name, countryName });
                 pot3ListView.Items.Add(listItem);
@@ -74,7 +77,7 @@ namespace CLDraw
             {
 
                 //Creates country name from uppercase string to only first letter uppercase string
-                string countryName = club.Country.ToString()[0] + club.Country.ToString().Substring(1).ToLower();
+                string countryName = club.Country.ToString();
 
                 var listItem = new ListViewItem(new[] { club.Name, countryName });
                 pot4ListView.Items.Add(listItem);
@@ -87,7 +90,7 @@ namespace CLDraw
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void clearPotsButton_Click(object sender, EventArgs e)
+        private void ClearPotsButton_Click(object sender, EventArgs e)
         {
             pots.Pot1.Clear();
             pots.Pot2.Clear();
@@ -101,7 +104,7 @@ namespace CLDraw
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void deleteSelectedButton_Click(object sender, EventArgs e)
+        private void DeleteSelectedButton_Click(object sender, EventArgs e)
         {
             foreach (ListViewItem pot1Item in pot1ListView.SelectedItems)
             {
@@ -123,6 +126,39 @@ namespace CLDraw
                 pot4ListView.Items.Remove(pot4Item);
             }
 
+        }
+
+        /// <summary>
+        /// Opens window to add club
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OpenAddClubWindowButton_Click(object sender, EventArgs e)
+        {
+            AddClubForm addClubForm = new AddClubForm(this);
+            addClubForm.Show();
+        }
+
+
+        /// <summary>
+        /// Adds new club to pot in window
+        /// </summary>
+        /// <param name="potNumber">>pot which club will be placed in</param>
+        /// <param name="club">new club to be placed in pot</param>
+        /// <exception cref="ArgumentException">throws exception when pot is full</exception>
+        public void AddClubToPot(int potNumber, Club club)
+        {
+
+            if (potNumber <= 0 || potNumber > 4) throw new ArgumentOutOfRangeException();
+
+            try
+            {
+                pots.AddClub(potNumber, club);
+                RefreshPotsView();
+            } catch(ArgumentException e)
+            {
+                throw new ArgumentException(e.Message);
+            }
         }
     }
 }

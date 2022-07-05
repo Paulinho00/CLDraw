@@ -49,6 +49,7 @@ namespace CLDraw
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clearPotsButton = new System.Windows.Forms.Button();
             this.deleteSelectedButton = new System.Windows.Forms.Button();
+            this.openAddClubWindowButton = new System.Windows.Forms.Button();
             this.pot1GroupBox.SuspendLayout();
             this.pot2GroupBox.SuspendLayout();
             this.pot3GroupBox.SuspendLayout();
@@ -63,7 +64,7 @@ namespace CLDraw
             this.pot1ListView.HideSelection = false;
             this.pot1ListView.Location = new System.Drawing.Point(6, 19);
             this.pot1ListView.Name = "pot1ListView";
-            this.pot1ListView.Size = new System.Drawing.Size(175, 127);
+            this.pot1ListView.Size = new System.Drawing.Size(175, 174);
             this.pot1ListView.TabIndex = 0;
             this.pot1ListView.UseCompatibleStateImageBehavior = false;
             this.pot1ListView.View = System.Windows.Forms.View.Details;
@@ -82,7 +83,7 @@ namespace CLDraw
             this.pot1GroupBox.Controls.Add(this.pot1ListView);
             this.pot1GroupBox.Location = new System.Drawing.Point(24, 12);
             this.pot1GroupBox.Name = "pot1GroupBox";
-            this.pot1GroupBox.Size = new System.Drawing.Size(187, 154);
+            this.pot1GroupBox.Size = new System.Drawing.Size(187, 199);
             this.pot1GroupBox.TabIndex = 2;
             this.pot1GroupBox.TabStop = false;
             this.pot1GroupBox.Text = "Pot 1";
@@ -92,7 +93,7 @@ namespace CLDraw
             this.pot2GroupBox.Controls.Add(this.pot2ListView);
             this.pot2GroupBox.Location = new System.Drawing.Point(228, 12);
             this.pot2GroupBox.Name = "pot2GroupBox";
-            this.pot2GroupBox.Size = new System.Drawing.Size(187, 154);
+            this.pot2GroupBox.Size = new System.Drawing.Size(187, 199);
             this.pot2GroupBox.TabIndex = 3;
             this.pot2GroupBox.TabStop = false;
             this.pot2GroupBox.Text = "Pot 2";
@@ -105,7 +106,7 @@ namespace CLDraw
             this.pot2ListView.HideSelection = false;
             this.pot2ListView.Location = new System.Drawing.Point(6, 19);
             this.pot2ListView.Name = "pot2ListView";
-            this.pot2ListView.Size = new System.Drawing.Size(175, 127);
+            this.pot2ListView.Size = new System.Drawing.Size(175, 174);
             this.pot2ListView.TabIndex = 0;
             this.pot2ListView.UseCompatibleStateImageBehavior = false;
             this.pot2ListView.View = System.Windows.Forms.View.Details;
@@ -124,7 +125,7 @@ namespace CLDraw
             this.pot3GroupBox.Controls.Add(this.pot3ListView);
             this.pot3GroupBox.Location = new System.Drawing.Point(435, 12);
             this.pot3GroupBox.Name = "pot3GroupBox";
-            this.pot3GroupBox.Size = new System.Drawing.Size(187, 154);
+            this.pot3GroupBox.Size = new System.Drawing.Size(187, 199);
             this.pot3GroupBox.TabIndex = 4;
             this.pot3GroupBox.TabStop = false;
             this.pot3GroupBox.Text = "Pot 3";
@@ -137,7 +138,7 @@ namespace CLDraw
             this.pot3ListView.HideSelection = false;
             this.pot3ListView.Location = new System.Drawing.Point(6, 19);
             this.pot3ListView.Name = "pot3ListView";
-            this.pot3ListView.Size = new System.Drawing.Size(175, 127);
+            this.pot3ListView.Size = new System.Drawing.Size(175, 174);
             this.pot3ListView.TabIndex = 0;
             this.pot3ListView.UseCompatibleStateImageBehavior = false;
             this.pot3ListView.View = System.Windows.Forms.View.Details;
@@ -156,7 +157,7 @@ namespace CLDraw
             this.pot4GroupBox.Controls.Add(this.pot4ListView);
             this.pot4GroupBox.Location = new System.Drawing.Point(643, 12);
             this.pot4GroupBox.Name = "pot4GroupBox";
-            this.pot4GroupBox.Size = new System.Drawing.Size(187, 154);
+            this.pot4GroupBox.Size = new System.Drawing.Size(187, 199);
             this.pot4GroupBox.TabIndex = 5;
             this.pot4GroupBox.TabStop = false;
             this.pot4GroupBox.Text = "Pot 4";
@@ -169,7 +170,7 @@ namespace CLDraw
             this.pot4ListView.HideSelection = false;
             this.pot4ListView.Location = new System.Drawing.Point(6, 19);
             this.pot4ListView.Name = "pot4ListView";
-            this.pot4ListView.Size = new System.Drawing.Size(175, 127);
+            this.pot4ListView.Size = new System.Drawing.Size(175, 174);
             this.pot4ListView.TabIndex = 0;
             this.pot4ListView.UseCompatibleStateImageBehavior = false;
             this.pot4ListView.View = System.Windows.Forms.View.Details;
@@ -191,7 +192,7 @@ namespace CLDraw
             this.clearPotsButton.TabIndex = 6;
             this.clearPotsButton.Text = "Clear Pots";
             this.clearPotsButton.UseVisualStyleBackColor = true;
-            this.clearPotsButton.Click += new System.EventHandler(this.clearPotsButton_Click);
+            this.clearPotsButton.Click += new System.EventHandler(this.ClearPotsButton_Click);
             // 
             // deleteSelectedButton
             // 
@@ -201,13 +202,24 @@ namespace CLDraw
             this.deleteSelectedButton.TabIndex = 7;
             this.deleteSelectedButton.Text = "Delete selected";
             this.deleteSelectedButton.UseVisualStyleBackColor = true;
-            this.deleteSelectedButton.Click += new System.EventHandler(this.deleteSelectedButton_Click);
+            this.deleteSelectedButton.Click += new System.EventHandler(this.DeleteSelectedButton_Click);
+            // 
+            // openAddClubWindowButton
+            // 
+            this.openAddClubWindowButton.Location = new System.Drawing.Point(1025, 12);
+            this.openAddClubWindowButton.Name = "openAddClubWindowButton";
+            this.openAddClubWindowButton.Size = new System.Drawing.Size(75, 23);
+            this.openAddClubWindowButton.TabIndex = 8;
+            this.openAddClubWindowButton.Text = "Add club";
+            this.openAddClubWindowButton.UseVisualStyleBackColor = true;
+            this.openAddClubWindowButton.Click += new System.EventHandler(this.OpenAddClubWindowButton_Click);
             // 
             // DrawWindowForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1101, 450);
+            this.ClientSize = new System.Drawing.Size(1106, 450);
+            this.Controls.Add(this.openAddClubWindowButton);
             this.Controls.Add(this.deleteSelectedButton);
             this.Controls.Add(this.clearPotsButton);
             this.Controls.Add(this.pot4GroupBox);
@@ -245,6 +257,7 @@ namespace CLDraw
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.Button clearPotsButton;
         private System.Windows.Forms.Button deleteSelectedButton;
+        private System.Windows.Forms.Button openAddClubWindowButton;
     }
 }
 
