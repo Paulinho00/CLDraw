@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CLDraw.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace CLDraw
 {
     public partial class AddClubForm : Form
     {
-        public AddClubForm()
+        public Pots pots { get; }
+        public AddClubForm(Pots pots)
         {
             InitializeComponent();
+            this.pots = pots;
+            countryComboBox.DataSource = Enum.GetValues(typeof(Country));
         }
     }
 }
