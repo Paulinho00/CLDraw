@@ -68,9 +68,22 @@ namespace CLDraw
             this.groupFGroupBox = new System.Windows.Forms.GroupBox();
             this.groupFListView = new System.Windows.Forms.ListView();
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.groupGGroupBox = new System.Windows.Forms.GroupBox();
+            this.groupGListView = new System.Windows.Forms.ListView();
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupHGroupBox = new System.Windows.Forms.GroupBox();
+            this.groupHListView = new System.Windows.Forms.ListView();
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.startDrawButton = new System.Windows.Forms.Button();
+            this.ball1PictureBox = new System.Windows.Forms.PictureBox();
+            this.ball2PictureBox = new System.Windows.Forms.PictureBox();
+            this.ball3PictureBox = new System.Windows.Forms.PictureBox();
+            this.ball4PictureBox = new System.Windows.Forms.PictureBox();
+            this.ball5PictureBox = new System.Windows.Forms.PictureBox();
+            this.ball6PictureBox = new System.Windows.Forms.PictureBox();
+            this.ball7PictureBox = new System.Windows.Forms.PictureBox();
+            this.ball8PictureBox = new System.Windows.Forms.PictureBox();
+            this.drawnTeamTextBox = new System.Windows.Forms.TextBox();
             this.pot1GroupBox.SuspendLayout();
             this.pot2GroupBox.SuspendLayout();
             this.pot3GroupBox.SuspendLayout();
@@ -81,7 +94,16 @@ namespace CLDraw
             this.groupDGroupBox.SuspendLayout();
             this.groupEGroupBox.SuspendLayout();
             this.groupFGroupBox.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.groupGGroupBox.SuspendLayout();
+            this.groupHGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ball1PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ball2PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ball3PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ball4PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ball5PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ball6PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ball7PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ball8PictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // pot1ListView
@@ -214,7 +236,7 @@ namespace CLDraw
             // 
             // clearPotsButton
             // 
-            this.clearPotsButton.Location = new System.Drawing.Point(944, 12);
+            this.clearPotsButton.Location = new System.Drawing.Point(1018, 12);
             this.clearPotsButton.Name = "clearPotsButton";
             this.clearPotsButton.Size = new System.Drawing.Size(75, 23);
             this.clearPotsButton.TabIndex = 6;
@@ -224,7 +246,7 @@ namespace CLDraw
             // 
             // deleteSelectedButton
             // 
-            this.deleteSelectedButton.Location = new System.Drawing.Point(848, 12);
+            this.deleteSelectedButton.Location = new System.Drawing.Point(908, 12);
             this.deleteSelectedButton.Name = "deleteSelectedButton";
             this.deleteSelectedButton.Size = new System.Drawing.Size(90, 23);
             this.deleteSelectedButton.TabIndex = 7;
@@ -234,7 +256,7 @@ namespace CLDraw
             // 
             // openAddClubWindowButton
             // 
-            this.openAddClubWindowButton.Location = new System.Drawing.Point(1025, 12);
+            this.openAddClubWindowButton.Location = new System.Drawing.Point(1111, 12);
             this.openAddClubWindowButton.Name = "openAddClubWindowButton";
             this.openAddClubWindowButton.Size = new System.Drawing.Size(75, 23);
             this.openAddClubWindowButton.TabIndex = 8;
@@ -349,7 +371,6 @@ namespace CLDraw
             // 
             // groupFGroupBox
             // 
-            this.groupFGroupBox.Controls.Add(this.groupBox1);
             this.groupFGroupBox.Controls.Add(this.groupFListView);
             this.groupFGroupBox.Location = new System.Drawing.Point(228, 421);
             this.groupFGroupBox.Name = "groupFGroupBox";
@@ -369,32 +390,172 @@ namespace CLDraw
             this.groupFListView.TabIndex = 1;
             this.groupFListView.UseCompatibleStateImageBehavior = false;
             // 
-            // groupBox1
+            // groupGGroupBox
             // 
-            this.groupBox1.Controls.Add(this.listView1);
-            this.groupBox1.Location = new System.Drawing.Point(8, 8);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(187, 126);
-            this.groupBox1.TabIndex = 12;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Group F";
+            this.groupGGroupBox.Controls.Add(this.groupGListView);
+            this.groupGGroupBox.Location = new System.Drawing.Point(435, 421);
+            this.groupGGroupBox.Name = "groupGGroupBox";
+            this.groupGGroupBox.Size = new System.Drawing.Size(187, 126);
+            this.groupGGroupBox.TabIndex = 12;
+            this.groupGGroupBox.TabStop = false;
+            this.groupGGroupBox.Text = "Group G";
             // 
-            // listView1
+            // groupGListView
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.groupGListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader12});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(6, 19);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(175, 102);
-            this.listView1.TabIndex = 1;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.groupGListView.HideSelection = false;
+            this.groupGListView.Location = new System.Drawing.Point(6, 19);
+            this.groupGListView.Name = "groupGListView";
+            this.groupGListView.Size = new System.Drawing.Size(175, 102);
+            this.groupGListView.TabIndex = 1;
+            this.groupGListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // groupHGroupBox
+            // 
+            this.groupHGroupBox.Controls.Add(this.groupHListView);
+            this.groupHGroupBox.Location = new System.Drawing.Point(643, 421);
+            this.groupHGroupBox.Name = "groupHGroupBox";
+            this.groupHGroupBox.Size = new System.Drawing.Size(187, 126);
+            this.groupHGroupBox.TabIndex = 13;
+            this.groupHGroupBox.TabStop = false;
+            this.groupHGroupBox.Text = "Group H";
+            // 
+            // groupHListView
+            // 
+            this.groupHListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader13});
+            this.groupHListView.HideSelection = false;
+            this.groupHListView.Location = new System.Drawing.Point(6, 19);
+            this.groupHListView.Name = "groupHListView";
+            this.groupHListView.Size = new System.Drawing.Size(175, 102);
+            this.groupHListView.TabIndex = 1;
+            this.groupHListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // startDrawButton
+            // 
+            this.startDrawButton.Location = new System.Drawing.Point(965, 41);
+            this.startDrawButton.Name = "startDrawButton";
+            this.startDrawButton.Size = new System.Drawing.Size(75, 23);
+            this.startDrawButton.TabIndex = 2;
+            this.startDrawButton.Text = "Start";
+            this.startDrawButton.UseVisualStyleBackColor = true;
+            this.startDrawButton.Click += new System.EventHandler(this.startDrawButton_Click);
+            // 
+            // ball1PictureBox
+            // 
+            this.ball1PictureBox.Image = global::CLDraw.Properties.Resources.draw_ball;
+            this.ball1PictureBox.Location = new System.Drawing.Point(858, 116);
+            this.ball1PictureBox.Name = "ball1PictureBox";
+            this.ball1PictureBox.Size = new System.Drawing.Size(88, 78);
+            this.ball1PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ball1PictureBox.TabIndex = 14;
+            this.ball1PictureBox.TabStop = false;
+            this.ball1PictureBox.Visible = false;
+            // 
+            // ball2PictureBox
+            // 
+            this.ball2PictureBox.Image = global::CLDraw.Properties.Resources.draw_ball;
+            this.ball2PictureBox.Location = new System.Drawing.Point(952, 116);
+            this.ball2PictureBox.Name = "ball2PictureBox";
+            this.ball2PictureBox.Size = new System.Drawing.Size(88, 78);
+            this.ball2PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ball2PictureBox.TabIndex = 15;
+            this.ball2PictureBox.TabStop = false;
+            this.ball2PictureBox.Visible = false;
+            // 
+            // ball3PictureBox
+            // 
+            this.ball3PictureBox.Image = global::CLDraw.Properties.Resources.draw_ball;
+            this.ball3PictureBox.Location = new System.Drawing.Point(1046, 116);
+            this.ball3PictureBox.Name = "ball3PictureBox";
+            this.ball3PictureBox.Size = new System.Drawing.Size(88, 78);
+            this.ball3PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ball3PictureBox.TabIndex = 16;
+            this.ball3PictureBox.TabStop = false;
+            this.ball3PictureBox.Visible = false;
+            // 
+            // ball4PictureBox
+            // 
+            this.ball4PictureBox.Image = global::CLDraw.Properties.Resources.draw_ball;
+            this.ball4PictureBox.Location = new System.Drawing.Point(1140, 116);
+            this.ball4PictureBox.Name = "ball4PictureBox";
+            this.ball4PictureBox.Size = new System.Drawing.Size(88, 78);
+            this.ball4PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ball4PictureBox.TabIndex = 17;
+            this.ball4PictureBox.TabStop = false;
+            this.ball4PictureBox.Visible = false;
+            // 
+            // ball5PictureBox
+            // 
+            this.ball5PictureBox.Image = global::CLDraw.Properties.Resources.draw_ball;
+            this.ball5PictureBox.Location = new System.Drawing.Point(858, 200);
+            this.ball5PictureBox.Name = "ball5PictureBox";
+            this.ball5PictureBox.Size = new System.Drawing.Size(88, 78);
+            this.ball5PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ball5PictureBox.TabIndex = 18;
+            this.ball5PictureBox.TabStop = false;
+            this.ball5PictureBox.Visible = false;
+            // 
+            // ball6PictureBox
+            // 
+            this.ball6PictureBox.Image = global::CLDraw.Properties.Resources.draw_ball;
+            this.ball6PictureBox.Location = new System.Drawing.Point(952, 200);
+            this.ball6PictureBox.Name = "ball6PictureBox";
+            this.ball6PictureBox.Size = new System.Drawing.Size(88, 78);
+            this.ball6PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ball6PictureBox.TabIndex = 19;
+            this.ball6PictureBox.TabStop = false;
+            this.ball6PictureBox.Visible = false;
+            // 
+            // ball7PictureBox
+            // 
+            this.ball7PictureBox.Image = global::CLDraw.Properties.Resources.draw_ball;
+            this.ball7PictureBox.Location = new System.Drawing.Point(1046, 200);
+            this.ball7PictureBox.Name = "ball7PictureBox";
+            this.ball7PictureBox.Size = new System.Drawing.Size(88, 78);
+            this.ball7PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ball7PictureBox.TabIndex = 20;
+            this.ball7PictureBox.TabStop = false;
+            this.ball7PictureBox.Visible = false;
+            // 
+            // ball8PictureBox
+            // 
+            this.ball8PictureBox.Image = global::CLDraw.Properties.Resources.draw_ball;
+            this.ball8PictureBox.Location = new System.Drawing.Point(1140, 200);
+            this.ball8PictureBox.Name = "ball8PictureBox";
+            this.ball8PictureBox.Size = new System.Drawing.Size(88, 78);
+            this.ball8PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ball8PictureBox.TabIndex = 21;
+            this.ball8PictureBox.TabStop = false;
+            this.ball8PictureBox.Visible = false;
+            // 
+            // drawnTeamTextBox
+            // 
+            this.drawnTeamTextBox.Location = new System.Drawing.Point(952, 90);
+            this.drawnTeamTextBox.Name = "drawnTeamTextBox";
+            this.drawnTeamTextBox.ReadOnly = true;
+            this.drawnTeamTextBox.Size = new System.Drawing.Size(172, 20);
+            this.drawnTeamTextBox.TabIndex = 22;
+            this.drawnTeamTextBox.Visible = false;
             // 
             // DrawWindowForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1106, 559);
+            this.ClientSize = new System.Drawing.Size(1230, 559);
+            this.Controls.Add(this.drawnTeamTextBox);
+            this.Controls.Add(this.ball8PictureBox);
+            this.Controls.Add(this.ball7PictureBox);
+            this.Controls.Add(this.ball6PictureBox);
+            this.Controls.Add(this.ball5PictureBox);
+            this.Controls.Add(this.ball4PictureBox);
+            this.Controls.Add(this.ball3PictureBox);
+            this.Controls.Add(this.ball2PictureBox);
+            this.Controls.Add(this.ball1PictureBox);
+            this.Controls.Add(this.startDrawButton);
+            this.Controls.Add(this.groupHGroupBox);
+            this.Controls.Add(this.groupGGroupBox);
             this.Controls.Add(this.groupFGroupBox);
             this.Controls.Add(this.groupEGroupBox);
             this.Controls.Add(this.groupDGroupBox);
@@ -421,8 +582,18 @@ namespace CLDraw
             this.groupDGroupBox.ResumeLayout(false);
             this.groupEGroupBox.ResumeLayout(false);
             this.groupFGroupBox.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
+            this.groupGGroupBox.ResumeLayout(false);
+            this.groupHGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ball1PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ball2PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ball3PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ball4PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ball5PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ball6PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ball7PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ball8PictureBox)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -463,11 +634,24 @@ namespace CLDraw
         private System.Windows.Forms.ListView groupEListView;
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.GroupBox groupFGroupBox;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.GroupBox groupGGroupBox;
+        private System.Windows.Forms.ListView groupGListView;
         private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.ListView groupFListView;
         private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.GroupBox groupHGroupBox;
+        private System.Windows.Forms.ListView groupHListView;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
+        private System.Windows.Forms.Button startDrawButton;
+        private System.Windows.Forms.PictureBox ball1PictureBox;
+        private System.Windows.Forms.PictureBox ball2PictureBox;
+        private System.Windows.Forms.PictureBox ball3PictureBox;
+        private System.Windows.Forms.PictureBox ball4PictureBox;
+        private System.Windows.Forms.PictureBox ball5PictureBox;
+        private System.Windows.Forms.PictureBox ball6PictureBox;
+        private System.Windows.Forms.PictureBox ball7PictureBox;
+        private System.Windows.Forms.PictureBox ball8PictureBox;
+        private System.Windows.Forms.TextBox drawnTeamTextBox;
     }
 }
 

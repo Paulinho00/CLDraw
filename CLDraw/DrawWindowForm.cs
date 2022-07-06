@@ -18,6 +18,8 @@ namespace CLDraw
     {
         private readonly Pots pots;
 
+        private List<int> drawPool;
+
         public DrawWindowForm()
         {
             InitializeComponent();
@@ -164,6 +166,38 @@ namespace CLDraw
             {
                 throw new ArgumentException(e.Message);
             }
+        }
+
+        /// <summary>
+        /// Start draw
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void startDrawButton_Click(object sender, EventArgs e)
+        {
+            if (!pots.CheckPotsReadyForDraw())
+            {
+                MessageBox.Show("Not enough teams to start draw", "Not enough teams", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            //Disabling the option to edit pots
+            deleteSelectedButton.Enabled = false;
+            clearPotsButton.Enabled = false;
+            openAddClubWindowButton.Enabled = false;
+
+            drawnTeamTextBox.Visible = true;
+
+            //Show balls
+            ball1PictureBox.Visible = true;
+            ball2PictureBox.Visible = true;
+            ball3PictureBox.Visible = true;
+            ball4PictureBox.Visible = true;
+            ball5PictureBox.Visible = true;
+            ball6PictureBox.Visible = true;
+            ball7PictureBox.Visible = true;
+            ball8PictureBox.Visible = true;
+
         }
     }
 }
