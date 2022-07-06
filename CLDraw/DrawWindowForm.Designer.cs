@@ -50,10 +50,38 @@ namespace CLDraw
             this.clearPotsButton = new System.Windows.Forms.Button();
             this.deleteSelectedButton = new System.Windows.Forms.Button();
             this.openAddClubWindowButton = new System.Windows.Forms.Button();
+            this.groupAGroupBox = new System.Windows.Forms.GroupBox();
+            this.groupAListView = new System.Windows.Forms.ListView();
+            this.clubName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupBGroupBox = new System.Windows.Forms.GroupBox();
+            this.groupBListView = new System.Windows.Forms.ListView();
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupCGroupBox = new System.Windows.Forms.GroupBox();
+            this.groupCListView = new System.Windows.Forms.ListView();
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupDGroupBox = new System.Windows.Forms.GroupBox();
+            this.groupDListView = new System.Windows.Forms.ListView();
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupEGroupBox = new System.Windows.Forms.GroupBox();
+            this.groupEListView = new System.Windows.Forms.ListView();
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupFGroupBox = new System.Windows.Forms.GroupBox();
+            this.groupFListView = new System.Windows.Forms.ListView();
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pot1GroupBox.SuspendLayout();
             this.pot2GroupBox.SuspendLayout();
             this.pot3GroupBox.SuspendLayout();
             this.pot4GroupBox.SuspendLayout();
+            this.groupAGroupBox.SuspendLayout();
+            this.groupBGroupBox.SuspendLayout();
+            this.groupCGroupBox.SuspendLayout();
+            this.groupDGroupBox.SuspendLayout();
+            this.groupEGroupBox.SuspendLayout();
+            this.groupFGroupBox.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pot1ListView
@@ -214,11 +242,165 @@ namespace CLDraw
             this.openAddClubWindowButton.UseVisualStyleBackColor = true;
             this.openAddClubWindowButton.Click += new System.EventHandler(this.OpenAddClubWindowButton_Click);
             // 
+            // groupAGroupBox
+            // 
+            this.groupAGroupBox.Controls.Add(this.groupAListView);
+            this.groupAGroupBox.Location = new System.Drawing.Point(24, 271);
+            this.groupAGroupBox.Name = "groupAGroupBox";
+            this.groupAGroupBox.Size = new System.Drawing.Size(187, 126);
+            this.groupAGroupBox.TabIndex = 9;
+            this.groupAGroupBox.TabStop = false;
+            this.groupAGroupBox.Text = "Group A";
+            // 
+            // groupAListView
+            // 
+            this.groupAListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.clubName});
+            this.groupAListView.HideSelection = false;
+            this.groupAListView.Location = new System.Drawing.Point(6, 19);
+            this.groupAListView.Name = "groupAListView";
+            this.groupAListView.Size = new System.Drawing.Size(175, 102);
+            this.groupAListView.TabIndex = 1;
+            this.groupAListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // groupBGroupBox
+            // 
+            this.groupBGroupBox.Controls.Add(this.groupBListView);
+            this.groupBGroupBox.Location = new System.Drawing.Point(228, 271);
+            this.groupBGroupBox.Name = "groupBGroupBox";
+            this.groupBGroupBox.Size = new System.Drawing.Size(187, 126);
+            this.groupBGroupBox.TabIndex = 10;
+            this.groupBGroupBox.TabStop = false;
+            this.groupBGroupBox.Text = "Group B";
+            // 
+            // groupBListView
+            // 
+            this.groupBListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader7});
+            this.groupBListView.HideSelection = false;
+            this.groupBListView.Location = new System.Drawing.Point(6, 19);
+            this.groupBListView.Name = "groupBListView";
+            this.groupBListView.Size = new System.Drawing.Size(175, 102);
+            this.groupBListView.TabIndex = 1;
+            this.groupBListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // groupCGroupBox
+            // 
+            this.groupCGroupBox.Controls.Add(this.groupCListView);
+            this.groupCGroupBox.Location = new System.Drawing.Point(435, 271);
+            this.groupCGroupBox.Name = "groupCGroupBox";
+            this.groupCGroupBox.Size = new System.Drawing.Size(187, 126);
+            this.groupCGroupBox.TabIndex = 11;
+            this.groupCGroupBox.TabStop = false;
+            this.groupCGroupBox.Text = "Group C";
+            // 
+            // groupCListView
+            // 
+            this.groupCListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader8});
+            this.groupCListView.HideSelection = false;
+            this.groupCListView.Location = new System.Drawing.Point(6, 19);
+            this.groupCListView.Name = "groupCListView";
+            this.groupCListView.Size = new System.Drawing.Size(175, 102);
+            this.groupCListView.TabIndex = 1;
+            this.groupCListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // groupDGroupBox
+            // 
+            this.groupDGroupBox.Controls.Add(this.groupDListView);
+            this.groupDGroupBox.Location = new System.Drawing.Point(643, 271);
+            this.groupDGroupBox.Name = "groupDGroupBox";
+            this.groupDGroupBox.Size = new System.Drawing.Size(187, 126);
+            this.groupDGroupBox.TabIndex = 12;
+            this.groupDGroupBox.TabStop = false;
+            this.groupDGroupBox.Text = "Group D";
+            // 
+            // groupDListView
+            // 
+            this.groupDListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader9});
+            this.groupDListView.HideSelection = false;
+            this.groupDListView.Location = new System.Drawing.Point(6, 19);
+            this.groupDListView.Name = "groupDListView";
+            this.groupDListView.Size = new System.Drawing.Size(175, 102);
+            this.groupDListView.TabIndex = 1;
+            this.groupDListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // groupEGroupBox
+            // 
+            this.groupEGroupBox.Controls.Add(this.groupEListView);
+            this.groupEGroupBox.Location = new System.Drawing.Point(24, 421);
+            this.groupEGroupBox.Name = "groupEGroupBox";
+            this.groupEGroupBox.Size = new System.Drawing.Size(187, 126);
+            this.groupEGroupBox.TabIndex = 10;
+            this.groupEGroupBox.TabStop = false;
+            this.groupEGroupBox.Text = "Group E";
+            // 
+            // groupEListView
+            // 
+            this.groupEListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader10});
+            this.groupEListView.HideSelection = false;
+            this.groupEListView.Location = new System.Drawing.Point(6, 19);
+            this.groupEListView.Name = "groupEListView";
+            this.groupEListView.Size = new System.Drawing.Size(175, 102);
+            this.groupEListView.TabIndex = 1;
+            this.groupEListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // groupFGroupBox
+            // 
+            this.groupFGroupBox.Controls.Add(this.groupBox1);
+            this.groupFGroupBox.Controls.Add(this.groupFListView);
+            this.groupFGroupBox.Location = new System.Drawing.Point(228, 421);
+            this.groupFGroupBox.Name = "groupFGroupBox";
+            this.groupFGroupBox.Size = new System.Drawing.Size(187, 126);
+            this.groupFGroupBox.TabIndex = 11;
+            this.groupFGroupBox.TabStop = false;
+            this.groupFGroupBox.Text = "Group F";
+            // 
+            // groupFListView
+            // 
+            this.groupFListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader11});
+            this.groupFListView.HideSelection = false;
+            this.groupFListView.Location = new System.Drawing.Point(6, 19);
+            this.groupFListView.Name = "groupFListView";
+            this.groupFListView.Size = new System.Drawing.Size(175, 102);
+            this.groupFListView.TabIndex = 1;
+            this.groupFListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.listView1);
+            this.groupBox1.Location = new System.Drawing.Point(8, 8);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(187, 126);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Group F";
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader12});
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(6, 19);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(175, 102);
+            this.listView1.TabIndex = 1;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // DrawWindowForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1106, 450);
+            this.ClientSize = new System.Drawing.Size(1106, 559);
+            this.Controls.Add(this.groupFGroupBox);
+            this.Controls.Add(this.groupEGroupBox);
+            this.Controls.Add(this.groupDGroupBox);
+            this.Controls.Add(this.groupCGroupBox);
+            this.Controls.Add(this.groupBGroupBox);
+            this.Controls.Add(this.groupAGroupBox);
             this.Controls.Add(this.openAddClubWindowButton);
             this.Controls.Add(this.deleteSelectedButton);
             this.Controls.Add(this.clearPotsButton);
@@ -233,6 +415,13 @@ namespace CLDraw
             this.pot2GroupBox.ResumeLayout(false);
             this.pot3GroupBox.ResumeLayout(false);
             this.pot4GroupBox.ResumeLayout(false);
+            this.groupAGroupBox.ResumeLayout(false);
+            this.groupBGroupBox.ResumeLayout(false);
+            this.groupCGroupBox.ResumeLayout(false);
+            this.groupDGroupBox.ResumeLayout(false);
+            this.groupEGroupBox.ResumeLayout(false);
+            this.groupFGroupBox.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -258,6 +447,27 @@ namespace CLDraw
         private System.Windows.Forms.Button clearPotsButton;
         private System.Windows.Forms.Button deleteSelectedButton;
         private System.Windows.Forms.Button openAddClubWindowButton;
+        private System.Windows.Forms.GroupBox groupAGroupBox;
+        private System.Windows.Forms.ListView groupAListView;
+        private System.Windows.Forms.ColumnHeader clubName;
+        private System.Windows.Forms.GroupBox groupBGroupBox;
+        private System.Windows.Forms.ListView groupBListView;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.GroupBox groupCGroupBox;
+        private System.Windows.Forms.ListView groupCListView;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.GroupBox groupDGroupBox;
+        private System.Windows.Forms.ListView groupDListView;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.GroupBox groupEGroupBox;
+        private System.Windows.Forms.ListView groupEListView;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.GroupBox groupFGroupBox;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader12;
+        private System.Windows.Forms.ListView groupFListView;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
     }
 }
 
