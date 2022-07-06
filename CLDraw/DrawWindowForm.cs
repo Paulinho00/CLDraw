@@ -108,24 +108,29 @@ namespace CLDraw
         {
             foreach (ListViewItem pot1Item in pot1ListView.SelectedItems)
             {
-                pot1ListView.Items.Remove(pot1Item);
+                Club clubToDelete = pots.Pot1.FirstOrDefault(name => name.Name == pot1Item.Text);
+                pots.Pot1.Remove(clubToDelete);
             }
 
             foreach(ListViewItem pot2Item in pot2ListView.SelectedItems)
             {
-                pot2ListView.Items.Remove(pot2Item);
+                Club clubToDelete = pots.Pot2.FirstOrDefault(name => name.Name == pot2Item.Text);
+                pots.Pot2.Remove(clubToDelete);
             }
 
             foreach(ListViewItem pot3Item in pot3ListView.SelectedItems)
             {
-                pot3ListView.Items.Remove(pot3Item);
+                Club clubToDelete = pots.Pot3.FirstOrDefault(name => name.Name == pot3Item.Text);
+                pots.Pot3.Remove(clubToDelete);
             }
 
             foreach(ListViewItem pot4Item in pot4ListView.SelectedItems)
             {
-                pot4ListView.Items.Remove(pot4Item);
+                Club clubToDelete = pots.Pot4.FirstOrDefault(name => name.Name == pot4Item.Text);
+                pots.Pot4.Remove(clubToDelete);
             }
 
+            RefreshPotsView();
         }
 
         /// <summary>
