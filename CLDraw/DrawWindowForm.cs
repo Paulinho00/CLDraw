@@ -18,8 +18,6 @@ namespace CLDraw
     {
         private readonly Pots pots;
 
-        private List<int> drawPool;
-
         public DrawWindowForm()
         {
             InitializeComponent();
@@ -28,7 +26,6 @@ namespace CLDraw
 
         private void DrawWindowForm_Load(object sender, EventArgs e)
         {
-
             RefreshPotsView();
         }
 
@@ -198,6 +195,31 @@ namespace CLDraw
             ball7PictureBox.Visible = true;
             ball8PictureBox.Visible = true;
 
+        }
+
+
+
+        /// <summary>
+        /// Randomly sets with ints from 1 to 8 new tags for ball pictureboxes, 
+        /// </summary>
+        private void ResetBallsTags()
+        {
+            //Generate list with ints from 1 to 8
+            List<int> drawPool = new List<int>();
+            drawPool = Enumerable.Range(1, 8).ToList();
+
+            //Shuffle generated list
+            Randomizer.Shuffle(drawPool);
+
+            //Sets tags using shuffled list
+            ball1PictureBox.Tag = drawPool[0];
+            ball2PictureBox.Tag = drawPool[1];
+            ball3PictureBox.Tag = drawPool[2];
+            ball4PictureBox.Tag = drawPool[3];
+            ball5PictureBox.Tag = drawPool[4];
+            ball6PictureBox.Tag = drawPool[5];
+            ball7PictureBox.Tag = drawPool[6];
+            ball8PictureBox.Tag = drawPool[7];
         }
     }
 }
