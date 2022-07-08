@@ -14,13 +14,11 @@ namespace CLDraw.Models
     {
 
 
-        public List<Club> Pot1 { get; }
-        public List<Club> Pot2 { get; }
-        public List<Club> Pot3 { get; }
-        public List<Club> Pot4 { get; }
+        public List<Club>[] PotsList { get; }
         public Pots()
         {
-            Pot1 = new List<Club>
+            PotsList = new List<Club>[4];
+            PotsList[0] = new List<Club>
             {
                 new Club("1", Country.Austria),
                 new Club("2", Country.Belgium),
@@ -32,7 +30,7 @@ namespace CLDraw.Models
                 new Club("8", Country.Ireland)
 
             };
-            Pot2 = new List<Club>()
+            PotsList[1] = new List<Club>()
             {
                 new Club("9", Country.Austria),
                 new Club("10", Country.Belgium),
@@ -43,7 +41,7 @@ namespace CLDraw.Models
                 new Club("15", Country.Hungary),
                 new Club("16", Country.Ireland)
             };
-            Pot3 = new List<Club>()
+            PotsList[2] = new List<Club>()
             {
                 new Club("17", Country.Austria),
                 new Club("18", Country.Belgium),
@@ -54,7 +52,7 @@ namespace CLDraw.Models
                 new Club("23", Country.Hungary),
                 new Club("24", Country.Ireland)
             };
-            Pot4 = new List<Club>()
+            PotsList[3] = new List<Club>()
             {
                 new Club("25", Country.Austria),
                 new Club("26", Country.Belgium),
@@ -75,29 +73,8 @@ namespace CLDraw.Models
         /// <exception cref="ArgumentException">throws when pot is full</exception>
         public void AddClub(int potNumber, Club newClub)
         {
-            switch (potNumber)
-            {
-                case 1:
-                    {
-                        if (Pot1.Count < 8) Pot1.Add(newClub);
-                        else throw new ArgumentException();
-                    } break;
-                case 2:
-                    {
-                        if (Pot2.Count < 8) Pot2.Add(newClub);
-                        else throw new ArgumentException();
-                    } break;
-                case 3:
-                    {
-                        if (Pot3.Count < 8) Pot3.Add(newClub);
-                        else throw new ArgumentException();
-                    } break;
-                case 4:
-                    {
-                        if (Pot4.Count < 8) Pot4.Add(newClub);
-                        else throw new ArgumentException();
-                    } break;
-            }
+            if (PotsList[potNumber].Count < 8) PotsList[potNumber].Add(newClub);
+            else throw new ArgumentException();
         }
 
         /// <summary>
@@ -106,42 +83,11 @@ namespace CLDraw.Models
         /// <returns>True if in every pot is 8 teams</returns>
         public bool CheckPotsReadyForDraw()
         {
-            if (Pot1.Count < 8) return false;
-            if (Pot2.Count < 8) return false;
-            if (Pot3.Count < 8) return false;
-            if (Pot4.Count < 8) return false;
-            return true;
-        }
-
-        /// <summary>
-        /// Reads club from given pot, at given index
-        /// </summary>
-        /// <param name="potNumber">Pot where is club to be extracted</param>
-        /// <param name="indexOfClub">Index where club is placed</param>
-        /// <returns>Club readed from pot</returns>
-        public Club PopClubFromPot (int potNumber, int indexOfClub)
-        {
-            Club club = null;
-            switch (potNumber)
+            foreach(List<Club> pot in PotsList)
             {
-                case 1:
-                    {
-                        club = Pot1[indexOfClub];
-                    } break;
-                case 2:
-                    {
-                        club = Pot2[indexOfClub];
-                    } break;
-                case 3:
-                    {
-                        club = Pot3[indexOfClub];
-                    } break;
-                case 4:
-                    {
-                        club = Pot4[indexOfClub];
-                    } break;
+                if (pot.Count < 8) return false;
             }
-            return club;
+            return true;
         }
     }
 }

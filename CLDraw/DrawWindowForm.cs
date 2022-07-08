@@ -44,7 +44,7 @@ namespace CLDraw
 
             //Loop refreshing pot 1
             pot1ListView.Items.Clear();
-            foreach (Club club in pots.Pot1) {
+            foreach (Club club in pots.PotsList[0]) {
 
                 //Creates country name from uppercase string to only first letter uppercase string
                 string countryName = club.Country.ToString();
@@ -55,7 +55,7 @@ namespace CLDraw
 
             //Loop refreshing pot 2
             pot2ListView.Items.Clear();
-            foreach (Club club in pots.Pot2)
+            foreach (Club club in pots.PotsList[1])
             {
 
                 //Creates country name from uppercase string to only first letter uppercase string
@@ -67,7 +67,7 @@ namespace CLDraw
 
             //Loop refreshing pot 3
             pot3ListView.Items.Clear();
-            foreach (Club club in pots.Pot3)
+            foreach (Club club in pots.PotsList[2])
             {
 
                 //Creates country name from uppercase string to only first letter uppercase string
@@ -79,7 +79,7 @@ namespace CLDraw
 
             //Loop refreshing pot 4
             pot4ListView.Items.Clear();
-            foreach (Club club in pots.Pot4)
+            foreach (Club club in pots.PotsList[3])
             {
 
                 //Creates country name from uppercase string to only first letter uppercase string
@@ -97,10 +97,10 @@ namespace CLDraw
         /// <param name="e"></param>
         private void ClearPotsButton_Click(object sender, EventArgs e)
         {
-            pots.Pot1.Clear();
-            pots.Pot2.Clear();
-            pots.Pot3.Clear();
-            pots.Pot4.Clear();
+            foreach(var pot in pots.PotsList)
+            {
+                pot.Clear();
+            }
             RefreshPotsView();
         }
 
@@ -113,26 +113,26 @@ namespace CLDraw
         {
             foreach (ListViewItem pot1Item in pot1ListView.SelectedItems)
             {
-                Club clubToDelete = pots.Pot1.FirstOrDefault(name => name.Name == pot1Item.Text);
-                pots.Pot1.Remove(clubToDelete);
+                Club clubToDelete = pots.PotsList[0].FirstOrDefault(name => name.Name == pot1Item.Text);
+                pots.PotsList[0].Remove(clubToDelete);
             }
 
             foreach(ListViewItem pot2Item in pot2ListView.SelectedItems)
             {
-                Club clubToDelete = pots.Pot2.FirstOrDefault(name => name.Name == pot2Item.Text);
-                pots.Pot2.Remove(clubToDelete);
+                Club clubToDelete = pots.PotsList[1].FirstOrDefault(name => name.Name == pot2Item.Text);
+                pots.PotsList[1].Remove(clubToDelete);
             }
 
             foreach(ListViewItem pot3Item in pot3ListView.SelectedItems)
             {
-                Club clubToDelete = pots.Pot3.FirstOrDefault(name => name.Name == pot3Item.Text);
-                pots.Pot3.Remove(clubToDelete);
+                Club clubToDelete = pots.PotsList[2].FirstOrDefault(name => name.Name == pot3Item.Text);
+                pots.PotsList[2].Remove(clubToDelete);
             }
 
             foreach(ListViewItem pot4Item in pot4ListView.SelectedItems)
             {
-                Club clubToDelete = pots.Pot4.FirstOrDefault(name => name.Name == pot4Item.Text);
-                pots.Pot4.Remove(clubToDelete);
+                Club clubToDelete = pots.PotsList[3].FirstOrDefault(name => name.Name == pot4Item.Text);
+                pots.PotsList[3].Remove(clubToDelete);
             }
 
             RefreshPotsView();
@@ -279,7 +279,7 @@ namespace CLDraw
         private void ClubIsDrawn(PictureBox ballPictureBox)
         {
             int clubIndexInPot = int.Parse(ballPictureBox.Tag.ToString());
-            Club club = pots.PopClubFromPot(drawRound, clubIndexInPot);
+            Club club = pots.PotsList[drawRound-1][clubIndexInPot];
             int groupNumber = GroupForClub(club);
 
             //Display name of drawn club
