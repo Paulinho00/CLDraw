@@ -452,6 +452,7 @@ namespace CLDraw
             this.ball1PictureBox.TabIndex = 14;
             this.ball1PictureBox.TabStop = false;
             this.ball1PictureBox.Visible = false;
+            this.ball1PictureBox.Click += new System.EventHandler(this.ball1PictureBox_Click);
             // 
             // ball2PictureBox
             // 

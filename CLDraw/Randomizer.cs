@@ -18,7 +18,7 @@ namespace CLDraw
         /// </summary>
         /// <typeparam name="T">List elements type</typeparam>
         /// <param name="list">List to be shuffled</param>
-        public static void Shuffle<T>(this IList<T> list)
+        private static void Shuffle<T>(this IList<T> list)
         {
 
             int n = list.Count;
@@ -30,6 +30,23 @@ namespace CLDraw
                 list[k] = list[n];
                 list[n] = value;
             }
+        }
+
+
+        /// <summary>
+        /// Generates list containing randomly ordered ints from 1 to 8
+        /// </summary>
+        /// <returns></returns>
+        public static List<int> GenerateDrawPool()
+        {
+            //Generate list with ints from 1 to 8
+            List<int> drawPool = new List<int>();
+            drawPool = Enumerable.Range(1, 8).ToList();
+
+            //Shuffles list
+            Shuffle(drawPool);
+
+            return drawPool;
         }
     }
 }

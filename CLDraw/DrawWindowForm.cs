@@ -17,6 +17,7 @@ namespace CLDraw
     public partial class DrawWindowForm : Form
     {
         private readonly Pots pots;
+        private int leftTeams { get; set; }
 
         public DrawWindowForm()
         {
@@ -198,6 +199,44 @@ namespace CLDraw
         }
 
 
+        /// <summary>
+        /// Manages the draw of teams
+        /// </summary>
+        private void DrawTeams()
+        {
+            ResetBallsTags();
+            //Set number of teams left in the pot
+            leftTeams = 8;
+
+            //Wait until all teams are drawn
+            while (leftTeams > 0) ;
+
+        }
+
+
+        /// <summary>
+        /// Adds team to group list view according to given groupNumber
+        /// </summary>
+        /// <param name="groupNumber">group number to which club is add</param>
+        /// <param name="club">club to be add to group</param>
+        private void addTeamToGroup(int groupNumber, Club club)
+        {
+            ListViewItem team = new ListViewItem(new[] { club.Name });
+
+
+            switch (groupNumber)
+            {
+                case 1: groupAListView.Items.Add(team); break;
+                case 2: groupBListView.Items.Add(team); break;
+                case 3: groupCListView.Items.Add(team); break;
+                case 4: groupDListView.Items.Add(team); break;
+                case 5: groupEListView.Items.Add(team); break;
+                case 6: groupFListView.Items.Add(team); break;
+                case 7: groupGListView.Items.Add(team); break;
+                case 8: groupHListView.Items.Add(team); break;
+
+            }
+        }
 
         /// <summary>
         /// Randomly sets with ints from 1 to 8 new tags for ball pictureboxes, 
@@ -205,11 +244,7 @@ namespace CLDraw
         private void ResetBallsTags()
         {
             //Generate list with ints from 1 to 8
-            List<int> drawPool = new List<int>();
-            drawPool = Enumerable.Range(1, 8).ToList();
-
-            //Shuffle generated list
-            Randomizer.Shuffle(drawPool);
+            List<int> drawPool = Randomizer.GenerateDrawPool();
 
             //Sets tags using shuffled list
             ball1PictureBox.Tag = drawPool[0];
@@ -220,6 +255,11 @@ namespace CLDraw
             ball6PictureBox.Tag = drawPool[5];
             ball7PictureBox.Tag = drawPool[6];
             ball8PictureBox.Tag = drawPool[7];
+        }
+
+        private void ball1PictureBox_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
