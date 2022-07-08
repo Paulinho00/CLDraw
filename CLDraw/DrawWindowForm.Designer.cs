@@ -464,6 +464,7 @@ namespace CLDraw
             this.ball2PictureBox.TabIndex = 15;
             this.ball2PictureBox.TabStop = false;
             this.ball2PictureBox.Visible = false;
+            this.ball2PictureBox.Click += new System.EventHandler(this.ball2PictureBox_Click);
             // 
             // ball3PictureBox
             // 
@@ -475,6 +476,7 @@ namespace CLDraw
             this.ball3PictureBox.TabIndex = 16;
             this.ball3PictureBox.TabStop = false;
             this.ball3PictureBox.Visible = false;
+            this.ball3PictureBox.Click += new System.EventHandler(this.ball3PictureBox_Click);
             // 
             // ball4PictureBox
             // 
@@ -486,6 +488,7 @@ namespace CLDraw
             this.ball4PictureBox.TabIndex = 17;
             this.ball4PictureBox.TabStop = false;
             this.ball4PictureBox.Visible = false;
+            this.ball4PictureBox.Click += new System.EventHandler(this.ball4PictureBox_Click);
             // 
             // ball5PictureBox
             // 
@@ -497,6 +500,7 @@ namespace CLDraw
             this.ball5PictureBox.TabIndex = 18;
             this.ball5PictureBox.TabStop = false;
             this.ball5PictureBox.Visible = false;
+            this.ball5PictureBox.Click += new System.EventHandler(this.ball5PictureBox_Click);
             // 
             // ball6PictureBox
             // 
@@ -508,6 +512,7 @@ namespace CLDraw
             this.ball6PictureBox.TabIndex = 19;
             this.ball6PictureBox.TabStop = false;
             this.ball6PictureBox.Visible = false;
+            this.ball6PictureBox.Click += new System.EventHandler(this.ball6PictureBox_Click);
             // 
             // ball7PictureBox
             // 
@@ -519,6 +524,7 @@ namespace CLDraw
             this.ball7PictureBox.TabIndex = 20;
             this.ball7PictureBox.TabStop = false;
             this.ball7PictureBox.Visible = false;
+            this.ball7PictureBox.Click += new System.EventHandler(this.ball7PictureBox_Click);
             // 
             // ball8PictureBox
             // 
@@ -530,6 +536,7 @@ namespace CLDraw
             this.ball8PictureBox.TabIndex = 21;
             this.ball8PictureBox.TabStop = false;
             this.ball8PictureBox.Visible = false;
+            this.ball8PictureBox.Click += new System.EventHandler(this.ball8PictureBox_Click);
             // 
             // drawnTeamTextBox
             // 

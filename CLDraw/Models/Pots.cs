@@ -112,5 +112,36 @@ namespace CLDraw.Models
             if (Pot4.Count < 8) return false;
             return true;
         }
+
+        /// <summary>
+        /// Reads club from given pot, at given index
+        /// </summary>
+        /// <param name="potNumber">Pot where is club to be extracted</param>
+        /// <param name="indexOfClub">Index where club is placed</param>
+        /// <returns>Club readed from pot</returns>
+        public Club PopClubFromPot (int potNumber, int indexOfClub)
+        {
+            Club club = null;
+            switch (potNumber)
+            {
+                case 1:
+                    {
+                        club = Pot1[indexOfClub];
+                    } break;
+                case 2:
+                    {
+                        club = Pot2[indexOfClub];
+                    } break;
+                case 3:
+                    {
+                        club = Pot3[indexOfClub];
+                    } break;
+                case 4:
+                    {
+                        club = Pot4[indexOfClub];
+                    } break;
+            }
+            return club;
+        }
     }
 }

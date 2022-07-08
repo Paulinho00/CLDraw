@@ -34,14 +34,14 @@ namespace CLDraw
 
 
         /// <summary>
-        /// Generates list containing randomly ordered ints from 1 to 8
+        /// Generates list containing randomly ordered ints from 0 to 7
         /// </summary>
         /// <returns></returns>
         public static List<int> GenerateDrawPool()
         {
-            //Generate list with ints from 1 to 8
+            //Generate list with ints from 0 to 7
             List<int> drawPool = new List<int>();
-            drawPool = Enumerable.Range(1, 8).ToList();
+            drawPool = Enumerable.Range(0, 8).ToList();
 
             //Shuffles list
             Shuffle(drawPool);
