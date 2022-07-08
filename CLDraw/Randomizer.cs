@@ -18,7 +18,7 @@ namespace CLDraw
         /// </summary>
         /// <typeparam name="T">List elements type</typeparam>
         /// <param name="list">List to be shuffled</param>
-        private static void Shuffle<T>(this IList<T> list)
+        public static void Shuffle<T>(this IList<T> list)
         {
 
             int n = list.Count;

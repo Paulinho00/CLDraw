@@ -23,17 +23,29 @@ namespace CLDraw
 
         private Groups groups { get; set; }
 
+        private List<PictureBox> GroupsPictureBoxes { get; set; }
+
         public DrawWindowForm()
         {
             InitializeComponent();
             pots = new Pots();
             drawRound = 1;
             groups = new Groups();
+            GroupsPictureBoxes = new List<PictureBox>();
+            GroupsPictureBoxes.Add(groupBall1pictureBox);
+            GroupsPictureBoxes.Add(groupBall2pictureBox);
+            GroupsPictureBoxes.Add(groupBall3pictureBox);
+            GroupsPictureBoxes.Add(groupBall4pictureBox);
+            GroupsPictureBoxes.Add(groupBall5pictureBox);
+            GroupsPictureBoxes.Add(groupBall6pictureBox);
+            GroupsPictureBoxes.Add(groupBall7pictureBox);
+            GroupsPictureBoxes.Add(groupBall8pictureBox);
         }
 
         private void DrawWindowForm_Load(object sender, EventArgs e)
         {
             RefreshPotsView();
+            
         }
 
         /// <summary>
@@ -194,7 +206,7 @@ namespace CLDraw
 
             //Set number of teams left in the pot
             leftTeams = 8;
-            ResetBalls();
+            ResetTeamBalls();
         }
 
 
@@ -226,7 +238,7 @@ namespace CLDraw
         /// <summary>
         /// Randomly sets with ints from 0 to 7 new tags for ball pictureboxes, and set viisibility of pictureboxes to true
         /// </summary>
-        private void ResetBalls()
+        private void ResetTeamBalls()
         {
 
             //Generate list with ints from 0 to 7
@@ -262,14 +274,50 @@ namespace CLDraw
         }
 
         /// <summary>
-        /// Returns number of group which club should be placed in
+        /// Enables group draw
         /// </summary>
-        /// <param name="club">Club to be placed in group</param>
-        /// <returns>Number of group where club should be placed</returns>
-        public int GroupForClub(Club club)
+        private void DrawGroup()
         {
-            return 8 - leftTeams;
+            var drawPool = groups.GeneratePoolForGroupDraw(drawRound);
+            Randomizer.Shuffle(drawPool);
 
+            for(int i = 0; i < drawPool.Count; i++)
+            {
+                GroupsPictureBoxes[i].Tag = drawPool[i];
+                GroupsPictureBoxes[i].Visible = true;
+            }
+
+            drawnGroupTextBox.Visible = true;
+        }
+
+        /// <summary>
+        /// Disable all team balls
+        /// </summary>
+        private void DisableTeamBallsPictureBox()
+        {
+            ball1PictureBox.Enabled = false;
+            ball2PictureBox.Enabled = false;
+            ball3PictureBox.Enabled = false;
+            ball4PictureBox.Enabled = false;
+            ball5PictureBox.Enabled = false;
+            ball6PictureBox.Enabled = false;
+            ball7PictureBox.Enabled = false;
+            ball8PictureBox.Enabled = false;
+        }
+
+        /// <summary>
+        /// Enable all team balls
+        /// </summary>
+        private void EnableTeamBallsPictureBox()
+        {
+            ball1PictureBox.Enabled = true;
+            ball2PictureBox.Enabled = true;
+            ball3PictureBox.Enabled = true;
+            ball4PictureBox.Enabled = true;
+            ball5PictureBox.Enabled = true;
+            ball6PictureBox.Enabled = true;
+            ball7PictureBox.Enabled = true;
+            ball8PictureBox.Enabled = true;
         }
 
         /// <summary>
@@ -279,24 +327,92 @@ namespace CLDraw
         private void ClubIsDrawn(PictureBox ballPictureBox)
         {
             Club club = pots.PotsList[drawRound - 1].FirstOrDefault(clubToBeFound => clubToBeFound.Name == ballPictureBox.Tag.ToString());
-            pots.PotsList[drawRound - 1].Remove(club);
-            RefreshPotsView();
-            int groupNumber = GroupForClub(club);
-
+            ballPictureBox.Visible = false;
+            
             //Display name of drawn club
             drawnTeamTextBox.Text = club.Name;
+            leftTeams--;
+
+            if (drawRound == 1)
+            {
+                int groupNumber = 7 - leftTeams;
+
+                AddTeamToGroup(groupNumber, club);
+
+                //Remove club from pot and refresh view
+                pots.PotsList[drawRound - 1].Remove(club);
+                RefreshPotsView();
+
+                //Check if round is over
+                if (drawRound < 4)
+                {
+                    if (leftTeams == 0)
+                    {
+                        leftTeams = 8;
+                        drawRound++;
+                        ResetTeamBalls();
+                    }
+                }
+            }
+            else
+            {
+                drawnGroupTextBox.Text = null;
+                DisableTeamBallsPictureBox();
+                DrawGroup();
+            }
+
+
+            
+        }
+
+        /// <summary>
+        /// Hides groups balls and drawn group text box after group is drawn
+        /// </summary>
+        private void HideGroupBalls()
+        {
+            foreach(PictureBox groupBallPictureBox in GroupsPictureBoxes)
+            {
+                if(groupBallPictureBox.Visible == true)
+                {
+                    groupBallPictureBox.Tag = null;
+                    groupBallPictureBox.Visible = false;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Reads which team ball pictureBox is chosen and which group ball picturebox is chosen and then assigns chosen team to chosen group
+        /// </summary>
+        /// <param name="groupBallPictureBox"></param>
+        private void GroupIsDrawn(PictureBox groupBallPictureBox)
+        {
+            Club club = pots.PotsList[drawRound - 1].FirstOrDefault(newClub => newClub.Name == drawnTeamTextBox.Text);
+
+            //Remove club from pot and refresh view
+            pots.PotsList[drawRound - 1].Remove(club);
+            RefreshPotsView();
+
+            int groupNumber = int.Parse(groupBallPictureBox.Tag.ToString());
+
+            //Calculate group letter from group index
+            char groupLetter =(char)(groupNumber + 65);
+
+            drawnGroupTextBox.Text = $"Group {groupLetter}!";
+
 
             AddTeamToGroup(groupNumber, club);
 
-            leftTeams--;
-            ballPictureBox.Visible = false;
+            HideGroupBalls();
+            EnableTeamBallsPictureBox();
+
+            //Check if round is over
             if (drawRound < 4)
             {
                 if (leftTeams == 0)
                 {
                     leftTeams = 8;
                     drawRound++;
-                    ResetBalls();
+                    ResetTeamBalls();
                 }
             }
         }
@@ -340,6 +456,47 @@ namespace CLDraw
         private void ball8PictureBox_Click(object sender, EventArgs e)
         {
             ClubIsDrawn(ball8PictureBox);
+        }
+
+        private void groupBall1pictureBox_Click(object sender, EventArgs e)
+        {
+            GroupIsDrawn(sender as PictureBox);
+
+        }
+
+        private void groupBall2pictureBox_Click(object sender, EventArgs e)
+        {
+            GroupIsDrawn(sender as PictureBox);
+        }
+
+        private void groupBall3pictureBox_Click(object sender, EventArgs e)
+        {
+            GroupIsDrawn(sender as PictureBox);
+        }
+
+        private void groupBall4pictureBox_Click(object sender, EventArgs e)
+        {
+            GroupIsDrawn(sender as PictureBox);
+        }
+
+        private void groupBall5pictureBox_Click(object sender, EventArgs e)
+        {
+            GroupIsDrawn(sender as PictureBox);
+        }
+
+        private void groupBall6pictureBox_Click(object sender, EventArgs e)
+        {
+            GroupIsDrawn(sender as PictureBox);
+        }
+
+        private void groupBall7pictureBox_Click(object sender, EventArgs e)
+        {
+            GroupIsDrawn(sender as PictureBox);
+        }
+
+        private void groupBall8pictureBox_Click(object sender, EventArgs e)
+        {
+            GroupIsDrawn(sender as PictureBox);
         }
     }
 }

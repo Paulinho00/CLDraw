@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace CLDraw.Models
 {
+    /// <summary>
+    /// Model for groups
+    /// </summary>
     public class Groups
     {
         public List<Club>[] GroupsList { get; }
@@ -17,6 +20,23 @@ namespace CLDraw.Models
             {
                 GroupsList[i] = new List<Club>();
             }
+        }
+
+        /// <summary>
+        /// Generates pool of groups available to draw according to draw round
+        /// </summary>
+        /// <param name="drawRound"></param>
+        /// <returns></returns>
+        public List<int> GeneratePoolForGroupDraw(int drawRound)
+        {
+            List<int> drawPool = new List<int>();
+            //Checks which groups have place for club
+            for(int i = 0; i < 8; i++)
+            {
+                if (GroupsList[i].Count != drawRound) drawPool.Add(i);
+            }
+
+            return drawPool;
         }
 
     }
