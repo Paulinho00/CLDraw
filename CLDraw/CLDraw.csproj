@@ -59,6 +59,7 @@
       <DependentUpon>AddClubForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Club.cs" />
+    <Compile Include="Models\Groups.cs" />
     <Compile Include="Models\Pots.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

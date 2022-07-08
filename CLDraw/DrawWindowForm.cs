@@ -21,11 +21,14 @@ namespace CLDraw
 
         private int drawRound { get; set;}
 
+        private Groups groups { get; set; }
+
         public DrawWindowForm()
         {
             InitializeComponent();
             pots = new Pots();
             drawRound = 1;
+            groups = new Groups();
         }
 
         private void DrawWindowForm_Load(object sender, EventArgs e)
@@ -202,19 +205,20 @@ namespace CLDraw
         /// <param name="club">club to be add to group</param>
         private void AddTeamToGroup(int groupNumber, Club club)
         {
+            groups.GroupsList[groupNumber].Add(club);
             ListViewItem team = new ListViewItem(new[] { club.Name });
 
 
             switch (groupNumber)
             {
-                case 1: groupAListView.Items.Add(team); break;
-                case 2: groupBListView.Items.Add(team); break;
-                case 3: groupCListView.Items.Add(team); break;
-                case 4: groupDListView.Items.Add(team); break;
-                case 5: groupEListView.Items.Add(team); break;
-                case 6: groupFListView.Items.Add(team); break;
-                case 7: groupGListView.Items.Add(team); break;
-                case 8: groupHListView.Items.Add(team); break;
+                case 0: groupAListView.Items.Add(team); break;
+                case 1: groupBListView.Items.Add(team); break;
+                case 2: groupCListView.Items.Add(team); break;
+                case 3: groupDListView.Items.Add(team); break;
+                case 4: groupEListView.Items.Add(team); break;
+                case 5: groupFListView.Items.Add(team); break;
+                case 6: groupGListView.Items.Add(team); break;
+                case 7: groupHListView.Items.Add(team); break;
 
             }
         }
@@ -264,7 +268,7 @@ namespace CLDraw
         /// <returns>Number of group where club should be placed</returns>
         public int GroupForClub(Club club)
         {
-            return 9 - leftTeams;
+            return 8 - leftTeams;
 
         }
 
