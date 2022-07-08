@@ -224,23 +224,23 @@ namespace CLDraw
         }
 
         /// <summary>
-        /// Randomly sets with ints from 1 to 8 new tags for ball pictureboxes, and set viisibility of pictureboxes to true
+        /// Randomly sets with ints from 0 to 7 new tags for ball pictureboxes, and set viisibility of pictureboxes to true
         /// </summary>
         private void ResetBalls()
         {
 
-            //Generate list with ints from 1 to 8
+            //Generate list with ints from 0 to 7
             List<int> drawPool = Randomizer.GenerateDrawPool();
 
             //Sets tags using shuffled list
-            ball1PictureBox.Tag = drawPool[0];
-            ball2PictureBox.Tag = drawPool[1];
-            ball3PictureBox.Tag = drawPool[2];
-            ball4PictureBox.Tag = drawPool[3];
-            ball5PictureBox.Tag = drawPool[4];
-            ball6PictureBox.Tag = drawPool[5];
-            ball7PictureBox.Tag = drawPool[6];
-            ball8PictureBox.Tag = drawPool[7];
+            ball1PictureBox.Tag = pots.PotsList[drawRound - 1][drawPool[0]].Name;
+            ball2PictureBox.Tag = pots.PotsList[drawRound - 1][drawPool[1]].Name;
+            ball3PictureBox.Tag = pots.PotsList[drawRound - 1][drawPool[2]].Name;
+            ball4PictureBox.Tag = pots.PotsList[drawRound - 1][drawPool[3]].Name;
+            ball5PictureBox.Tag = pots.PotsList[drawRound - 1][drawPool[4]].Name;
+            ball6PictureBox.Tag = pots.PotsList[drawRound - 1][drawPool[5]].Name;
+            ball7PictureBox.Tag = pots.PotsList[drawRound - 1][drawPool[6]].Name;
+            ball8PictureBox.Tag = pots.PotsList[drawRound - 1][drawPool[7]].Name;
 
             //Show balls
             ball1PictureBox.Visible = true;
@@ -278,8 +278,9 @@ namespace CLDraw
         /// <param name="ballPictureBox">chosen picturebox</param>
         private void ClubIsDrawn(PictureBox ballPictureBox)
         {
-            int clubIndexInPot = int.Parse(ballPictureBox.Tag.ToString());
-            Club club = pots.PotsList[drawRound-1][clubIndexInPot];
+            Club club = pots.PotsList[drawRound - 1].FirstOrDefault(clubToBeFound => clubToBeFound.Name == ballPictureBox.Tag.ToString());
+            pots.PotsList[drawRound - 1].Remove(club);
+            RefreshPotsView();
             int groupNumber = GroupForClub(club);
 
             //Display name of drawn club
