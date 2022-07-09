@@ -101,6 +101,7 @@ namespace CLDraw
             this.groupFCountryHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupGCountryHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupHCountryHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.resetButton = new System.Windows.Forms.Button();
             this.pot1GroupBox.SuspendLayout();
             this.pot2GroupBox.SuspendLayout();
             this.pot3GroupBox.SuspendLayout();
@@ -765,11 +766,23 @@ namespace CLDraw
             // 
             this.groupHCountryHeader.Text = "Country";
             // 
+            // resetButton
+            // 
+            this.resetButton.Enabled = false;
+            this.resetButton.Location = new System.Drawing.Point(1046, 41);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(75, 23);
+            this.resetButton.TabIndex = 32;
+            this.resetButton.Text = "Reset";
+            this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
+            // 
             // DrawWindowForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1230, 559);
+            this.Controls.Add(this.resetButton);
             this.Controls.Add(this.drawnGroupTextBox);
             this.Controls.Add(this.groupBall8pictureBox);
             this.Controls.Add(this.groupBall7pictureBox);
@@ -912,6 +925,7 @@ namespace CLDraw
         private System.Windows.Forms.ColumnHeader groupFCountryHeader;
         private System.Windows.Forms.ColumnHeader groupGCountryHeader;
         private System.Windows.Forms.ColumnHeader groupHCountryHeader;
+        private System.Windows.Forms.Button resetButton;
     }
 }
 

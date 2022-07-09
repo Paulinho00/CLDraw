@@ -203,6 +203,7 @@ namespace CLDraw
             startDrawButton.Enabled = false;
 
             drawnTeamTextBox.Visible = true;
+            resetButton.Enabled = true;
 
             //Set number of teams left in the pot
             leftTeams = 8;
@@ -433,6 +434,41 @@ namespace CLDraw
             }
         }
 
+        /// <summary>
+        /// Reset content of pots to its original state
+        /// </summary>
+        private void ResetPots()
+        {
+            foreach(List<Club> group in groups.GroupsList)
+            {
+                if (group.Count >= 1 && group[0] != null) pots.PotsList[0].Add(group[0]);
+                if (group.Count >= 2 && group[1] != null) pots.PotsList[1].Add(group[1]);
+                if (group.Count >= 3 && group[2] != null) pots.PotsList[2].Add(group[2]);
+                if (group.Count >= 4 && group[3] != null) pots.PotsList[3].Add(group[3]);
+            }
+            RefreshPotsView();
+        }
+
+        /// <summary>
+        /// Clears content of all groups
+        /// </summary>
+        private void ClearGroups()
+        {
+            foreach (List<Club> group in groups.GroupsList)
+            {
+                group.Clear();
+            }
+
+            groupAListView.Items.Clear();
+            groupBListView.Items.Clear();
+            groupCListView.Items.Clear();
+            groupDListView.Items.Clear();
+            groupEListView.Items.Clear();
+            groupFListView.Items.Clear();
+            groupGListView.Items.Clear();
+            groupHListView.Items.Clear();
+        }
+
         private void ball1PictureBox_Click(object sender, EventArgs e)
         {
             ClubIsDrawn(ball1PictureBox);
@@ -513,6 +549,42 @@ namespace CLDraw
         private void groupBall8pictureBox_Click(object sender, EventArgs e)
         {
             GroupIsDrawn(sender as PictureBox);
+        }
+
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+            //Hide all balls 
+            foreach(PictureBox groupBallPictureBox in GroupsPictureBoxes)
+            {
+                groupBallPictureBox.Visible = false;
+            }
+
+            ball1PictureBox.Visible = false;
+            ball2PictureBox.Visible = false;
+            ball3PictureBox.Visible = false;
+            ball4PictureBox.Visible = false;
+            ball5PictureBox.Visible = false;
+            ball6PictureBox.Visible = false;
+            ball7PictureBox.Visible = false;
+            ball8PictureBox.Visible = false;
+
+            drawnGroupTextBox.Visible = false;
+            drawnTeamTextBox.Visible = false;
+
+            ResetPots();
+            ClearGroups();
+
+            drawRound = 1;
+            leftTeams = 8;
+
+            //Enable the option to edit pots
+            deleteSelectedButton.Enabled = true;
+            clearPotsButton.Enabled = true;
+            openAddClubWindowButton.Enabled = true;
+            startDrawButton.Enabled = true;
+
+            resetButton.Enabled = false;
+
         }
     }
 }
