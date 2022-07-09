@@ -20,48 +20,48 @@ namespace CLDraw.Models
             PotsList = new List<Club>[4];
             PotsList[0] = new List<Club>
             {
-                new Club("1", Country.Austria),
-                new Club("2", Country.Belgium),
-                new Club("3", Country.Croatia),
-                new Club("4", Country.Denmark),
-                new Club("5", Country.England),
-                new Club("6", Country.Cyprus),
-                new Club("7", Country.Hungary),
-                new Club("8", Country.Ireland)
+                new Club("Chelsea FC", Country.England),
+                new Club("Villareal", Country.Spain),
+                new Club("Atletico Madrid", Country.Spain),
+                new Club("Manchester City", Country.England),
+                new Club("Bayern Munich", Country.Germany),
+                new Club("Inter", Country.Italy),
+                new Club("Lille", Country.France),
+                new Club("Sporting", Country.Portugal)
 
             };
             PotsList[1] = new List<Club>()
             {
-                new Club("9", Country.Austria),
-                new Club("10", Country.Belgium),
-                new Club("11", Country.Croatia),
-                new Club("12", Country.Denmark),
-                new Club("13", Country.England),
-                new Club("14", Country.Cyprus),
-                new Club("15", Country.Hungary),
-                new Club("16", Country.Ireland)
+                new Club("Real Madrid", Country.Spain),
+                new Club("Barcelona", Country.Spain),
+                new Club("Juventus", Country.Italy),
+                new Club("Manchester United", Country.England),
+                new Club("Paris Sain-Germain", Country.France),
+                new Club("Liverpool", Country.England),
+                new Club("Sevilla", Country.Spain),
+                new Club("Borussia Dortmund", Country.Germany)
             };
             PotsList[2] = new List<Club>()
             {
-                new Club("17", Country.Austria),
-                new Club("18", Country.Belgium),
-                new Club("19", Country.Croatia),
-                new Club("20", Country.Denmark),
-                new Club("21", Country.England),
-                new Club("22", Country.Cyprus),
-                new Club("23", Country.Hungary),
-                new Club("24", Country.Ireland)
+                new Club("Porto", Country.Portugal),
+                new Club("Ajax", Country.Netherlands),
+                new Club("Shakhar Donetsk", Country.Ukraine),
+                new Club("RB Leipzig", Country.Germany),
+                new Club("Red Bull Salzburg", Country.Austria),
+                new Club("Benfica", Country.Portugal),
+                new Club("Atalanta", Country.Italy),
+                new Club("AEK Athens", Country.Greece)
             };
             PotsList[3] = new List<Club>()
             {
-                new Club("25", Country.Austria),
-                new Club("26", Country.Belgium),
-                new Club("27", Country.Croatia),
-                new Club("28", Country.Denmark),
-                new Club("29", Country.England),
-                new Club("30", Country.Cyprus),
-                new Club("31", Country.Hungary),
-                new Club("32", Country.Ireland)
+                new Club("Besiktas", Country.Turkey),
+                new Club("Dynamo Kyiv", Country.Ukraine),
+                new Club("Club Brugge", Country.Belgium),
+                new Club("Young Boys", Country.Switzerland),
+                new Club("AC Milan", Country.Italy),
+                new Club("Malmo", Country.Sweden),
+                new Club("Wolfsburg", Country.Germany),
+                new Club("AS Monaco", Country.France)
             };
         }
 

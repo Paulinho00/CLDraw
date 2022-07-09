@@ -278,7 +278,8 @@ namespace CLDraw
         /// </summary>
         private void DrawGroup()
         {
-            var drawPool = groups.GeneratePoolForGroupDraw(drawRound);
+            Club club = pots.PotsList[drawRound - 1].FirstOrDefault(clubFromPot => clubFromPot.Name == drawnTeamTextBox.Text);
+            var drawPool = groups.GeneratePoolForGroupDraw(drawRound, club);
 
             string possibleGroups = "Possible groups: ";
             
