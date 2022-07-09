@@ -52,28 +52,27 @@ namespace CLDraw
             this.openAddClubWindowButton = new System.Windows.Forms.Button();
             this.groupAGroupBox = new System.Windows.Forms.GroupBox();
             this.groupAListView = new System.Windows.Forms.ListView();
-            this.clubName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBGroupBox = new System.Windows.Forms.GroupBox();
             this.groupBListView = new System.Windows.Forms.ListView();
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupBClubHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupCGroupBox = new System.Windows.Forms.GroupBox();
             this.groupCListView = new System.Windows.Forms.ListView();
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupCClubHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupDGroupBox = new System.Windows.Forms.GroupBox();
             this.groupDListView = new System.Windows.Forms.ListView();
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupDClubHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupEGroupBox = new System.Windows.Forms.GroupBox();
             this.groupEListView = new System.Windows.Forms.ListView();
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupEClubHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupFGroupBox = new System.Windows.Forms.GroupBox();
             this.groupFListView = new System.Windows.Forms.ListView();
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupFClubHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupGGroupBox = new System.Windows.Forms.GroupBox();
             this.groupGListView = new System.Windows.Forms.ListView();
-            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupGClubHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupHGroupBox = new System.Windows.Forms.GroupBox();
             this.groupHListView = new System.Windows.Forms.ListView();
-            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupHClubHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.startDrawButton = new System.Windows.Forms.Button();
             this.ball1PictureBox = new System.Windows.Forms.PictureBox();
             this.ball2PictureBox = new System.Windows.Forms.PictureBox();
@@ -93,6 +92,15 @@ namespace CLDraw
             this.groupBall7pictureBox = new System.Windows.Forms.PictureBox();
             this.groupBall8pictureBox = new System.Windows.Forms.PictureBox();
             this.drawnGroupTextBox = new System.Windows.Forms.TextBox();
+            this.groupAClubHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupACountryHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupBCountryHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupCCountryHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupDCountryHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupECountryHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupFCountryHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupGCountryHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupHCountryHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pot1GroupBox.SuspendLayout();
             this.pot2GroupBox.SuspendLayout();
             this.pot3GroupBox.SuspendLayout();
@@ -294,13 +302,15 @@ namespace CLDraw
             // groupAListView
             // 
             this.groupAListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.clubName});
+            this.groupAClubHeader,
+            this.groupACountryHeader});
             this.groupAListView.HideSelection = false;
             this.groupAListView.Location = new System.Drawing.Point(6, 19);
             this.groupAListView.Name = "groupAListView";
             this.groupAListView.Size = new System.Drawing.Size(175, 102);
             this.groupAListView.TabIndex = 1;
             this.groupAListView.UseCompatibleStateImageBehavior = false;
+            this.groupAListView.View = System.Windows.Forms.View.Details;
             // 
             // groupBGroupBox
             // 
@@ -315,13 +325,20 @@ namespace CLDraw
             // groupBListView
             // 
             this.groupBListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader7});
+            this.groupBClubHeader,
+            this.groupBCountryHeader});
             this.groupBListView.HideSelection = false;
             this.groupBListView.Location = new System.Drawing.Point(6, 19);
             this.groupBListView.Name = "groupBListView";
             this.groupBListView.Size = new System.Drawing.Size(175, 102);
             this.groupBListView.TabIndex = 1;
             this.groupBListView.UseCompatibleStateImageBehavior = false;
+            this.groupBListView.View = System.Windows.Forms.View.Details;
+            // 
+            // groupBClubHeader
+            // 
+            this.groupBClubHeader.Text = "Club";
+            this.groupBClubHeader.Width = 110;
             // 
             // groupCGroupBox
             // 
@@ -336,13 +353,20 @@ namespace CLDraw
             // groupCListView
             // 
             this.groupCListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader8});
+            this.groupCClubHeader,
+            this.groupCCountryHeader});
             this.groupCListView.HideSelection = false;
             this.groupCListView.Location = new System.Drawing.Point(6, 19);
             this.groupCListView.Name = "groupCListView";
             this.groupCListView.Size = new System.Drawing.Size(175, 102);
             this.groupCListView.TabIndex = 1;
             this.groupCListView.UseCompatibleStateImageBehavior = false;
+            this.groupCListView.View = System.Windows.Forms.View.Details;
+            // 
+            // groupCClubHeader
+            // 
+            this.groupCClubHeader.Text = "Club";
+            this.groupCClubHeader.Width = 110;
             // 
             // groupDGroupBox
             // 
@@ -357,13 +381,20 @@ namespace CLDraw
             // groupDListView
             // 
             this.groupDListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader9});
+            this.groupDClubHeader,
+            this.groupDCountryHeader});
             this.groupDListView.HideSelection = false;
             this.groupDListView.Location = new System.Drawing.Point(6, 19);
             this.groupDListView.Name = "groupDListView";
             this.groupDListView.Size = new System.Drawing.Size(175, 102);
             this.groupDListView.TabIndex = 1;
             this.groupDListView.UseCompatibleStateImageBehavior = false;
+            this.groupDListView.View = System.Windows.Forms.View.Details;
+            // 
+            // groupDClubHeader
+            // 
+            this.groupDClubHeader.Text = "Club";
+            this.groupDClubHeader.Width = 110;
             // 
             // groupEGroupBox
             // 
@@ -378,13 +409,20 @@ namespace CLDraw
             // groupEListView
             // 
             this.groupEListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader10});
+            this.groupEClubHeader,
+            this.groupECountryHeader});
             this.groupEListView.HideSelection = false;
             this.groupEListView.Location = new System.Drawing.Point(6, 19);
             this.groupEListView.Name = "groupEListView";
             this.groupEListView.Size = new System.Drawing.Size(175, 102);
             this.groupEListView.TabIndex = 1;
             this.groupEListView.UseCompatibleStateImageBehavior = false;
+            this.groupEListView.View = System.Windows.Forms.View.Details;
+            // 
+            // groupEClubHeader
+            // 
+            this.groupEClubHeader.Text = "Club";
+            this.groupEClubHeader.Width = 110;
             // 
             // groupFGroupBox
             // 
@@ -399,13 +437,20 @@ namespace CLDraw
             // groupFListView
             // 
             this.groupFListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader11});
+            this.groupFClubHeader,
+            this.groupFCountryHeader});
             this.groupFListView.HideSelection = false;
             this.groupFListView.Location = new System.Drawing.Point(6, 19);
             this.groupFListView.Name = "groupFListView";
             this.groupFListView.Size = new System.Drawing.Size(175, 102);
             this.groupFListView.TabIndex = 1;
             this.groupFListView.UseCompatibleStateImageBehavior = false;
+            this.groupFListView.View = System.Windows.Forms.View.Details;
+            // 
+            // groupFClubHeader
+            // 
+            this.groupFClubHeader.Text = "Club";
+            this.groupFClubHeader.Width = 110;
             // 
             // groupGGroupBox
             // 
@@ -420,13 +465,20 @@ namespace CLDraw
             // groupGListView
             // 
             this.groupGListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader12});
+            this.groupGClubHeader,
+            this.groupGCountryHeader});
             this.groupGListView.HideSelection = false;
             this.groupGListView.Location = new System.Drawing.Point(6, 19);
             this.groupGListView.Name = "groupGListView";
             this.groupGListView.Size = new System.Drawing.Size(175, 102);
             this.groupGListView.TabIndex = 1;
             this.groupGListView.UseCompatibleStateImageBehavior = false;
+            this.groupGListView.View = System.Windows.Forms.View.Details;
+            // 
+            // groupGClubHeader
+            // 
+            this.groupGClubHeader.Text = "Club";
+            this.groupGClubHeader.Width = 110;
             // 
             // groupHGroupBox
             // 
@@ -441,13 +493,20 @@ namespace CLDraw
             // groupHListView
             // 
             this.groupHListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader13});
+            this.groupHClubHeader,
+            this.groupHCountryHeader});
             this.groupHListView.HideSelection = false;
             this.groupHListView.Location = new System.Drawing.Point(6, 19);
             this.groupHListView.Name = "groupHListView";
             this.groupHListView.Size = new System.Drawing.Size(175, 102);
             this.groupHListView.TabIndex = 1;
             this.groupHListView.UseCompatibleStateImageBehavior = false;
+            this.groupHListView.View = System.Windows.Forms.View.Details;
+            // 
+            // groupHClubHeader
+            // 
+            this.groupHClubHeader.Text = "Club";
+            this.groupHClubHeader.Width = 110;
             // 
             // startDrawButton
             // 
@@ -669,6 +728,43 @@ namespace CLDraw
             this.drawnGroupTextBox.TabIndex = 31;
             this.drawnGroupTextBox.Visible = false;
             // 
+            // groupAClubHeader
+            // 
+            this.groupAClubHeader.Text = "Club";
+            this.groupAClubHeader.Width = 110;
+            // 
+            // groupACountryHeader
+            // 
+            this.groupACountryHeader.Text = "Country";
+            // 
+            // groupBCountryHeader
+            // 
+            this.groupBCountryHeader.Text = "Country";
+            // 
+            // groupCCountryHeader
+            // 
+            this.groupCCountryHeader.Text = "Country";
+            // 
+            // groupDCountryHeader
+            // 
+            this.groupDCountryHeader.Text = "Country";
+            // 
+            // groupECountryHeader
+            // 
+            this.groupECountryHeader.Text = "Country";
+            // 
+            // groupFCountryHeader
+            // 
+            this.groupFCountryHeader.Text = "Country";
+            // 
+            // groupGCountryHeader
+            // 
+            this.groupGCountryHeader.Text = "Country";
+            // 
+            // groupHCountryHeader
+            // 
+            this.groupHCountryHeader.Text = "Country";
+            // 
             // DrawWindowForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -767,28 +863,27 @@ namespace CLDraw
         private System.Windows.Forms.Button openAddClubWindowButton;
         private System.Windows.Forms.GroupBox groupAGroupBox;
         private System.Windows.Forms.ListView groupAListView;
-        private System.Windows.Forms.ColumnHeader clubName;
         private System.Windows.Forms.GroupBox groupBGroupBox;
         private System.Windows.Forms.ListView groupBListView;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader groupBClubHeader;
         private System.Windows.Forms.GroupBox groupCGroupBox;
         private System.Windows.Forms.ListView groupCListView;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader groupCClubHeader;
         private System.Windows.Forms.GroupBox groupDGroupBox;
         private System.Windows.Forms.ListView groupDListView;
-        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader groupDClubHeader;
         private System.Windows.Forms.GroupBox groupEGroupBox;
         private System.Windows.Forms.ListView groupEListView;
-        private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.ColumnHeader groupEClubHeader;
         private System.Windows.Forms.GroupBox groupFGroupBox;
         private System.Windows.Forms.GroupBox groupGGroupBox;
         private System.Windows.Forms.ListView groupGListView;
-        private System.Windows.Forms.ColumnHeader columnHeader12;
+        private System.Windows.Forms.ColumnHeader groupGClubHeader;
         private System.Windows.Forms.ListView groupFListView;
-        private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.ColumnHeader groupFClubHeader;
         private System.Windows.Forms.GroupBox groupHGroupBox;
         private System.Windows.Forms.ListView groupHListView;
-        private System.Windows.Forms.ColumnHeader columnHeader13;
+        private System.Windows.Forms.ColumnHeader groupHClubHeader;
         private System.Windows.Forms.Button startDrawButton;
         private System.Windows.Forms.PictureBox ball1PictureBox;
         private System.Windows.Forms.PictureBox ball2PictureBox;
@@ -808,6 +903,15 @@ namespace CLDraw
         private System.Windows.Forms.PictureBox groupBall7pictureBox;
         private System.Windows.Forms.PictureBox groupBall8pictureBox;
         private System.Windows.Forms.TextBox drawnGroupTextBox;
+        private System.Windows.Forms.ColumnHeader groupAClubHeader;
+        private System.Windows.Forms.ColumnHeader groupACountryHeader;
+        private System.Windows.Forms.ColumnHeader groupBCountryHeader;
+        private System.Windows.Forms.ColumnHeader groupCCountryHeader;
+        private System.Windows.Forms.ColumnHeader groupDCountryHeader;
+        private System.Windows.Forms.ColumnHeader groupECountryHeader;
+        private System.Windows.Forms.ColumnHeader groupFCountryHeader;
+        private System.Windows.Forms.ColumnHeader groupGCountryHeader;
+        private System.Windows.Forms.ColumnHeader groupHCountryHeader;
     }
 }
 

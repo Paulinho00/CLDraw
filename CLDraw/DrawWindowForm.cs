@@ -218,7 +218,7 @@ namespace CLDraw
         private void AddTeamToGroup(int groupNumber, Club club)
         {
             groups.GroupsList[groupNumber].Add(club);
-            ListViewItem team = new ListViewItem(new[] { club.Name });
+            ListViewItem team = new ListViewItem(new[] { club.Name, club.Country.ToString() });
 
 
             switch (groupNumber)
