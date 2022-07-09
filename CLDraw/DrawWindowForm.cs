@@ -279,6 +279,21 @@ namespace CLDraw
         private void DrawGroup()
         {
             var drawPool = groups.GeneratePoolForGroupDraw(drawRound);
+
+            string possibleGroups = "Possible groups: ";
+            
+
+            //Create string with all possible groups to draw
+            foreach(int groupNumber in drawPool)
+            {
+                char groupLetter = (char) (groupNumber + 65);
+                possibleGroups += " " + groupLetter;
+            }
+
+            //Show string with possible groups in TextBox
+            drawnGroupTextBox.Text = possibleGroups;
+
+
             Randomizer.Shuffle(drawPool);
 
             for(int i = 0; i < drawPool.Count; i++)
