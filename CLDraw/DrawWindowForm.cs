@@ -280,7 +280,7 @@ namespace CLDraw
         private void DrawGroup()
         {
             Club club = pots.PotsList[drawRound - 1].FirstOrDefault(clubFromPot => clubFromPot.Name == drawnTeamTextBox.Text);
-            var drawPool = groups.GeneratePoolForGroupDraw(drawRound, club);
+            var drawPool = groups.GeneratePoolForGroupDraw(drawRound, club, pots.PotsList[drawRound-1]);
 
             string possibleGroups = "Possible groups: ";
             
