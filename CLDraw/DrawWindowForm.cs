@@ -559,6 +559,15 @@ namespace CLDraw
                 groupBallPictureBox.Visible = false;
             }
 
+            ball1PictureBox.Enabled = true;
+            ball2PictureBox.Enabled = true;
+            ball3PictureBox.Enabled = true;
+            ball4PictureBox.Enabled = true;
+            ball5PictureBox.Enabled = true;
+            ball6PictureBox.Enabled = true;
+            ball7PictureBox.Enabled = true;
+            ball8PictureBox.Enabled = true;
+
             ball1PictureBox.Visible = false;
             ball2PictureBox.Visible = false;
             ball3PictureBox.Visible = false;
